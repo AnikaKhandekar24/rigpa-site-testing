@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">Rigpa logo</title>
+  <desc id="desc">A clear-awareness circle with a cross-border route, paired with the Rigpa wordmark.</desc>
+  <rect width="720" height="220" fill="none"/>
+  <g transform="translate(56 46)">
+    <circle cx="64" cy="64" r="52" fill="none" stroke="#15130E" stroke-width="5"/>
+    <path d="M12 64H116" fill="none" stroke="#C9C0AC" stroke-width="2.5"/>
+    <path d="M64 12C42 34 42 98 64 116M64 12C86 34 86 98 64 116" fill="none" stroke="#C9C0AC" stroke-width="2.5"/>
+    <path d="M28 92C43 66 57 82 72 56C87 29 102 43 116 20" fill="none" stroke="#7A2828" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="28" cy="92" r="7" fill="#7A2828" stroke="#F4EFE4" stroke-width="4"/>
+    <circle cx="72" cy="56" r="5.5" fill="#7A2828" stroke="#F4EFE4" stroke-width="3.5"/>
+    <circle cx="116" cy="20" r="7" fill="#7A2828" stroke="#F4EFE4" stroke-width="4"/>
+  </g>
+  <text x="198" y="133" fill="#15130E" font-family="Georgia, 'Times New Roman', serif" font-size="92" letter-spacing="-2">Rigpa</text>
+  <circle cx="443" cy="103" r="8" fill="#7A2828"/>
+</svg>

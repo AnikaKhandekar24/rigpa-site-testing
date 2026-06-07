@@ -1,4 +1,5 @@
 import { siteContent } from "@/content/site";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   const { identity, footer } = siteContent;
@@ -7,9 +8,8 @@ export function Footer() {
     <footer>
       <div className="wrap">
         <div className="footer-grid">
-          <a href="#top" className="wordmark" aria-label="Rigpa, back to top">
-            {identity.name}
-            <span className="dot" aria-hidden="true" />
+          <a href="#top" className="brand-link" aria-label="Rigpa, back to top">
+            <Logo compact />
           </a>
 
           <div className="footer-content">

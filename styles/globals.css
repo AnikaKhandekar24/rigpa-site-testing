@@ -24,7 +24,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: scroll;
 }
 
@@ -43,7 +43,6 @@ body {
 
 body {
   min-width: 320px;
-  overflow-x: hidden;
   touch-action: pan-y;
 }
 
@@ -131,35 +130,84 @@ nav.top {
   position: sticky;
   top: 0;
   z-index: 50;
+  width: 100%;
   border-bottom: 1px solid var(--rule-soft);
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--paper) 80%, transparent);
 }
 
 .nav-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
 }
 
-.wordmark {
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.logo-mark {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.logo-compact .logo-mark {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.logo-ring,
+.logo-line,
+.logo-route {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.logo-ring {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.logo-line-soft {
+  stroke: var(--rule);
+  stroke-width: 1.2;
+}
+
+.logo-route {
+  stroke: var(--oxblood);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+}
+
+.logo-node {
+  fill: var(--oxblood);
+  stroke: var(--paper);
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.logo-word {
   font-family: var(--serif-display);
   font-size: 1.55rem;
   font-variation-settings: "opsz" 60, "wght" 450, "SOFT" 30;
   letter-spacing: -0.01em;
 }
 
-.wordmark .dot {
-  display: inline-block;
-  width: 0.32em;
-  height: 0.32em;
-  margin-left: 0.08em;
-  border-radius: 50%;
-  background: var(--oxblood);
-  transform: translateY(-0.05em);
+.brand-link:hover .logo-ring {
+  stroke: var(--oxblood);
 }
 
 nav.top ul {
@@ -455,7 +503,7 @@ footer {
   column-gap: clamp(2rem, 4vw, 4rem);
 }
 
-.footer-grid > .wordmark {
+.footer-grid > .brand-link {
   padding-top: 0.1rem;
 }
 
@@ -531,7 +579,7 @@ footer .copy {
     grid-template-columns: 1fr;
   }
 
-  .footer-grid > .wordmark {
+  .footer-grid > .brand-link {
     margin-bottom: 1.5rem;
   }
 }
