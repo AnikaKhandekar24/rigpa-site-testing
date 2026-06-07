@@ -30,7 +30,6 @@ npm start
 
 No analytics, trackers, embeds, or other third-party scripts are included.
 
-## Test deployment
+## Deployment
 
-Pushes to `main` publish a static test build through GitHub Pages. The source
-repository can remain private while the generated preview URL is public.
+The site is deployed as a standard Next.js application on Vercel.

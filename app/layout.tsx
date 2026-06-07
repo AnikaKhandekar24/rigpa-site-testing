@@ -21,8 +21,6 @@ const newsreader = Newsreader({
 });
 
 const { identity } = siteContent;
-const assetBasePath =
-  process.env.GITHUB_ACTIONS === "true" ? "/rigpa-site-testing" : "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(identity.domain),
@@ -49,7 +47,7 @@ export const metadata: Metadata = {
     images: ["/opengraph.svg"],
   },
   icons: {
-    icon: `${assetBasePath}/favicon.svg`,
+    icon: "/favicon.svg",
   },
 };
 

@@ -179,26 +179,28 @@ nav.top li {
 }
 
 .hero {
+  position: relative;
   padding-top: clamp(4rem, 9vw, 8rem);
   padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
 .hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.42fr);
-  align-items: center;
-  gap: clamp(2rem, 4vw, 4.5rem);
+  position: relative;
 }
 
 .hero-copy {
   position: relative;
   z-index: 1;
+  max-width: calc(100% - 11rem);
 }
 
 .hero-graphic {
-  width: min(100%, 23rem);
-  justify-self: end;
+  position: absolute;
+  top: clamp(5rem, 7vw, 6.4rem);
+  right: -4rem;
+  width: clamp(13rem, 18vw, 15.5rem);
   color: var(--rule);
+  opacity: 0.86;
 }
 
 .hero-graphic svg {
@@ -446,16 +448,24 @@ footer {
   background: var(--paper-deep);
 }
 
-.footer-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 2.2rem;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: clamp(2rem, 4vw, 4rem);
+}
+
+.footer-grid > .wordmark {
+  padding-top: 0.1rem;
+}
+
+.footer-content {
+  min-width: 0;
 }
 
 footer .tag {
+  display: block;
+  margin-bottom: 1.35rem;
   color: var(--ink-mute);
   font-family: var(--serif-text);
   font-size: 0.95rem;
@@ -464,7 +474,7 @@ footer .tag {
 
 footer .legal {
   max-width: 88ch;
-  padding-top: 1.6rem;
+  padding-top: 1.35rem;
   border-top: 1px solid var(--rule);
   color: var(--ink-mute);
   font-family: var(--serif-text);
@@ -494,23 +504,12 @@ footer .copy {
 }
 
 @media (max-width: 960px) {
-  .hero-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.34fr);
-    gap: 1.5rem;
-  }
-
-  .hero-graphic {
-    opacity: 0.78;
-  }
-}
-
-@media (max-width: 800px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-  }
-
   .hero-graphic {
     display: none;
+  }
+
+  .hero-copy {
+    max-width: none;
   }
 }
 
@@ -526,6 +525,14 @@ footer .copy {
 
   .practice {
     grid-template-columns: 4rem minmax(0, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid > .wordmark {
+    margin-bottom: 1.5rem;
   }
 }
 
