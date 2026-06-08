@@ -1,4 +1,5 @@
 import { FlowStep } from "@/components/FlowStep";
+import { HeroLogo } from "@/components/HeroLogo";
 import { Item } from "@/components/Item";
 import { PracticeRow } from "@/components/PracticeRow";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -11,23 +12,28 @@ export default function Home() {
   return (
     <>
       <header className="hero wrap" id="top">
-        <p className="eyebrow">{hero.eyebrow}</p>
-        <h1>{hero.title}</h1>
-        <p className="lede">
-          {hero.ledeBefore}
-          <em>{hero.ledeEmphasis}</em>
-          {hero.ledeAfter}
-        </p>
-        <div className="cta-row">
-          {hero.ctas.map((cta) => (
-            <a
-              key={cta.href}
-              href={cta.href}
-              className={cta.variant === "primary" ? "quiet-cta" : "quiet-link"}
-            >
-              {cta.label} <span aria-hidden="true">→</span>
-            </a>
-          ))}
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <p className="eyebrow">{hero.eyebrow}</p>
+            <h1>{hero.title}</h1>
+            <p className="lede">
+              {hero.ledeBefore}
+              <em>{hero.ledeEmphasis}</em>
+              {hero.ledeAfter}
+            </p>
+            <div className="cta-row">
+              {hero.ctas.map((cta) => (
+                <a
+                  key={cta.href}
+                  href={cta.href}
+                  className={cta.variant === "primary" ? "quiet-cta" : "quiet-link"}
+                >
+                  {cta.label} <span aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <HeroLogo />
         </div>
       </header>
 

@@ -52,6 +52,12 @@ body {
   html {
     scroll-behavior: auto;
   }
+
+  .hero-logo-route,
+  .hero-logo-node {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }
 
 section[id],
@@ -267,6 +273,116 @@ nav.top li {
   padding-bottom: clamp(3.5rem, 6vw, 5.75rem);
 }
 
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(8rem, 12vw, 10rem);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-logo {
+  justify-self: end;
+  width: clamp(8.5rem, 12vw, 10rem);
+  opacity: 0.92;
+}
+
+.hero-logo-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.hero-logo-ring,
+.hero-logo-line,
+.hero-logo-route {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-logo-ring {
+  stroke: var(--ink-soft);
+  stroke-width: 1.25;
+}
+
+.hero-logo-line {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.hero-logo-line-soft {
+  opacity: 0.82;
+}
+
+.hero-logo-route {
+  stroke: var(--oxblood);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  stroke-dasharray: 230;
+  stroke-dashoffset: 230;
+  animation: hero-route-draw 5.4s ease-in-out infinite;
+}
+
+.hero-logo-route-shadow {
+  stroke: var(--oxblood);
+  stroke-width: 6;
+  opacity: 0.08;
+}
+
+.hero-logo-node,
+.hero-logo-dot-large {
+  fill: var(--oxblood);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hero-logo-node {
+  stroke: var(--paper);
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+  animation: hero-node-pulse 5.4s ease-in-out infinite;
+}
+
+.hero-logo-node-mid {
+  animation-delay: 0.45s;
+}
+
+.hero-logo-dot-large {
+  opacity: 0.9;
+}
+
+@keyframes hero-route-draw {
+  0%,
+  12% {
+    stroke-dashoffset: 230;
+  }
+
+  48%,
+  78% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -230;
+  }
+}
+
+@keyframes hero-node-pulse {
+  0%,
+  28%,
+  100% {
+    transform: scale(1);
+  }
+
+  38% {
+    transform: scale(1.22);
+  }
+}
+
 .eyebrow {
   display: flex;
   align-items: center;
@@ -288,7 +404,7 @@ nav.top li {
 }
 
 .hero h1 {
-  max-width: 18ch;
+  max-width: 22ch;
   margin: 0 0 2rem;
   font-family: var(--serif-display);
   font-size: clamp(2.8rem, 6.2vw, 5.4rem);
@@ -573,6 +689,14 @@ footer .copy {
   .nav-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-logo {
+    display: none;
   }
 
   nav.top ul {
