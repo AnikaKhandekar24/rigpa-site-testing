@@ -20,7 +20,10 @@ export function Logo({ compact = false }: LogoProps) {
         <circle className="logo-node" cx="34" cy="27" r="2.8" />
         <circle className="logo-node" cx="53" cy="13" r="3.6" />
       </svg>
-      <span className="logo-word">Rigpa</span>
+      <span className="logo-wordmark">
+        <span className="logo-word">Rigpa</span>
+        <span className="logo-dot" aria-hidden="true" />
+      </span>
     </span>
   );
 }

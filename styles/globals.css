@@ -218,12 +218,26 @@ nav.top .wrap {
   vector-effect: non-scaling-stroke;
 }
 
+.logo-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
 .logo-word {
   font-family: var(--serif-display);
   font-size: 1.55rem;
   font-variation-settings: "opsz" 60, "wght" 450, "SOFT" 30;
   letter-spacing: -0.01em;
-  white-space: nowrap;
+}
+
+.logo-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.1rem;
+  background: var(--oxblood);
+  border-radius: 50%;
+  transform: translateY(-0.03rem);
 }
 
 .brand-link:hover .logo-ring {
