@@ -5,7 +5,7 @@ type SectionHeadingProps = {
   markerLabel: string;
   eyebrow: string;
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   titleId: string;
 };
 
@@ -26,7 +26,7 @@ export function SectionHeading({
       <div>
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 id={titleId}>{title}</h2>
-        <p className="dek">{children}</p>
+        {children ? <p className="dek">{children}</p> : null}
       </div>
     </>
   );

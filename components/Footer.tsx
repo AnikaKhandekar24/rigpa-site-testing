@@ -1,5 +1,5 @@
-import { siteContent } from "@/content/site";
 import { Logo } from "@/components/Logo";
+import { siteContent } from "@/content/site";
 
 export function Footer() {
   const { identity, footer } = siteContent;

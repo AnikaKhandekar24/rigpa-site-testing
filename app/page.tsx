@@ -1,61 +1,33 @@
-import { Eyebrow } from "@/components/Eyebrow";
+import { FlowStep } from "@/components/FlowStep";
+import { Item } from "@/components/Item";
 import { PracticeRow } from "@/components/PracticeRow";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/content/site";
 
 export default function Home() {
-  const { hero, practice, contact, identity } = siteContent;
+  const { hero, practice, how, ways, special, process, limits, contact, identity } =
+    siteContent;
 
   return (
     <>
-      <header className="hero wrap">
-        <div className="hero-layout">
-          <div className="hero-copy">
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <h1>{hero.title}</h1>
-            <p className="lede">
-              {hero.ledeBefore}
-              <em>{hero.ledeEmphasis}</em>
-              {hero.ledeAfter}
-            </p>
-            <a href="#contact" className="quiet-cta">
-              {hero.cta} <span aria-hidden="true">→</span>
+      <header className="hero wrap" id="top">
+        <p className="eyebrow">{hero.eyebrow}</p>
+        <h1>{hero.title}</h1>
+        <p className="lede">
+          {hero.ledeBefore}
+          <em>{hero.ledeEmphasis}</em>
+          {hero.ledeAfter}
+        </p>
+        <div className="cta-row">
+          {hero.ctas.map((cta) => (
+            <a
+              key={cta.href}
+              href={cta.href}
+              className={cta.variant === "primary" ? "quiet-cta" : "quiet-link"}
+            >
+              {cta.label} <span aria-hidden="true">→</span>
             </a>
-          </div>
-
-          <div className="hero-graphic" aria-hidden="true">
-            <svg viewBox="0 0 420 540" role="presentation">
-              <path className="graphic-axis" d="M44 32V508M20 478H400" />
-              <circle className="graphic-orbit" cx="210" cy="255" r="156" />
-              <ellipse
-                className="graphic-orbit graphic-orbit-muted"
-                cx="210"
-                cy="255"
-                rx="67"
-                ry="156"
-              />
-              <path
-                className="graphic-orbit graphic-orbit-muted"
-                d="M69 188C151 229 269 229 351 188M69 322C151 281 269 281 351 322M54 255H366"
-              />
-              <path
-                className="graphic-route"
-                d="M85 352C124 285 155 335 196 247C235 165 282 204 344 135"
-              />
-              <path
-                className="graphic-route graphic-route-secondary"
-                d="M70 166C131 123 174 184 216 257C255 324 301 355 366 313"
-              />
-              <circle className="graphic-node" cx="85" cy="352" r="7" />
-              <circle className="graphic-node" cx="196" cy="247" r="5" />
-              <circle className="graphic-node" cx="344" cy="135" r="7" />
-              <circle className="graphic-node graphic-node-ink" cx="70" cy="166" r="5" />
-              <circle className="graphic-node graphic-node-ink" cx="216" cy="257" r="5" />
-              <circle className="graphic-node graphic-node-ink" cx="366" cy="313" r="5" />
-              <path className="graphic-tick" d="M37 99H51M37 255H51M37 411H51" />
-              <circle className="graphic-anchor" cx="44" cy="478" r="4" />
-            </svg>
-          </div>
+          ))}
         </div>
       </header>
 
@@ -83,6 +55,117 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" id="how" aria-labelledby="how-title">
+        <div className="wrap">
+          <div className="grid">
+            <SectionHeading
+              marker={how.marker}
+              markerLabel={how.markerLabel}
+              eyebrow={how.eyebrow}
+              title={how.title}
+              titleId="how-title"
+            >
+              {how.dekBefore}
+              <em>{how.dekEmphasis}</em>
+              {how.dekAfter}
+            </SectionHeading>
+
+            <div className="grid-spacer" aria-hidden="true" />
+            <div className="items">
+              {how.items.map((item) => (
+                <Item key={item.title} {...item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="ways" aria-labelledby="ways-title">
+        <div className="wrap">
+          <div className="grid">
+            <SectionHeading
+              marker={ways.marker}
+              markerLabel={ways.markerLabel}
+              eyebrow={ways.eyebrow}
+              title={ways.title}
+              titleId="ways-title"
+            >
+              {ways.dek}
+            </SectionHeading>
+
+            <div className="grid-spacer" aria-hidden="true" />
+            <div className="items">
+              {ways.items.map((item) => (
+                <Item key={item.label} {...item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="special" aria-labelledby="special-title">
+        <div className="wrap">
+          <div className="grid">
+            <SectionHeading
+              marker={special.marker}
+              markerLabel={special.markerLabel}
+              eyebrow={special.eyebrow}
+              title={special.title}
+              titleId="special-title"
+            />
+
+            <div className="grid-spacer" aria-hidden="true" />
+            <div className="items">
+              {special.items.map((item) => (
+                <Item key={item.label} {...item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="process" aria-labelledby="process-title">
+        <div className="wrap">
+          <div className="grid">
+            <SectionHeading
+              marker={process.marker}
+              markerLabel={process.markerLabel}
+              eyebrow={process.eyebrow}
+              title={process.title}
+              titleId="process-title"
+            />
+
+            <div className="grid-spacer" aria-hidden="true" />
+            <div className="flow-list">
+              {process.steps.map((step) => (
+                <FlowStep key={step.number} {...step} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="not" aria-labelledby="not-title">
+        <div className="wrap">
+          <div className="grid">
+            <SectionHeading
+              marker={limits.marker}
+              markerLabel={limits.markerLabel}
+              eyebrow={limits.eyebrow}
+              title={limits.title}
+              titleId="not-title"
+            />
+
+            <div className="grid-spacer" aria-hidden="true" />
+            <div className="items">
+              {limits.items.map((item, index) => (
+                <Item key={index} {...item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="contact" id="contact" aria-labelledby="contact-title">
         <div className="wrap">
           <div className="grid">
@@ -91,7 +174,7 @@ export default function Home() {
               {contact.markerLabel}
             </div>
             <div>
-              <Eyebrow>{contact.eyebrow}</Eyebrow>
+              <p className="eyebrow">{contact.eyebrow}</p>
               <h2 id="contact-title">{contact.title}</h2>
               <p>{contact.body}</p>
               <a className="mail" href={`mailto:${identity.email}`}>

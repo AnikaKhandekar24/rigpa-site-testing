@@ -21,19 +21,20 @@ const newsreader = Newsreader({
 });
 
 const { identity } = siteContent;
+const title = "Rigpa — Technology & Privacy Law";
+const description =
+  "India-qualified counsel for technology, artificial intelligence, and data matters that cross borders.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(identity.domain),
-  title: "Rigpa — Technology & Privacy Law",
-  description:
-    "India-qualified counsel for technology, artificial intelligence, and data matters that cross borders.",
+  title,
+  description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Rigpa — Technology & Privacy Law",
-    description:
-      "India-qualified counsel for technology, artificial intelligence, and data matters that cross borders.",
+    title,
+    description,
     url: "/",
     siteName: "Rigpa",
     type: "website",
@@ -41,9 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rigpa — Technology & Privacy Law",
-    description:
-      "India-qualified counsel for technology, artificial intelligence, and data matters that cross borders.",
+    title,
+    description,
     images: ["/opengraph.svg"],
   },
   icons: {
@@ -67,7 +67,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${fraunces.variable} ${newsreader.variable}`}>
-      <body id="top">
+      <body>
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
