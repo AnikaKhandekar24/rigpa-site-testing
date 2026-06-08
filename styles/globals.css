@@ -286,8 +286,9 @@ nav.top li {
 
 .hero-logo {
   justify-self: end;
-  width: clamp(8.5rem, 12vw, 10rem);
+  width: clamp(11.5rem, 16vw, 14rem);
   opacity: 0.92;
+  transform: translateX(clamp(0rem, 1.5vw, 1.5rem));
 }
 
 .hero-logo-mark {
