@@ -1,30 +1,57 @@
 export function HeroLogo() {
   return (
     <div className="hero-logo" aria-hidden="true">
-      <svg className="hero-logo-mark" viewBox="20 20 220 220" role="presentation">
-        <circle className="hero-logo-ring" cx="130" cy="130" r="83" />
-        <path className="hero-logo-line" d="M47 130H213" />
-        <path
-          className="hero-logo-line hero-logo-line-soft"
-          d="M130 47C94 80 94 180 130 213M130 47C166 80 166 180 130 213"
-        />
-        <path
-          className="hero-logo-line hero-logo-line-soft"
-          d="M60 92C104 112 156 112 200 92M60 168C104 148 156 148 200 168"
-        />
-        <path
-          className="hero-logo-route hero-logo-route-shadow"
-          d="M62 174C86 128 107 154 130 118C153 82 181 102 207 63"
-        />
-        <path
-          className="hero-logo-route"
-          d="M62 174C86 128 107 154 130 118C153 82 181 102 207 63"
-        />
-        <circle className="hero-logo-node" cx="62" cy="174" r="5" />
-        <circle className="hero-logo-node hero-logo-node-mid" cx="130" cy="118" r="4" />
-        <circle className="hero-logo-node" cx="207" cy="63" r="5" />
-        <circle className="hero-logo-dot-large" cx="226" cy="42" r="4" />
-      </svg>
+      <div className="hero-browser">
+        <span className="hero-browser-glow hero-browser-glow-one" />
+        <span className="hero-browser-glow hero-browser-glow-two" />
+        <div className="hero-browser-bar">
+          <span className="hero-browser-spark" />
+          <span className="hero-browser-dot" />
+          <span className="hero-browser-dot hero-browser-dot-soft" />
+          <span className="hero-browser-address">rigpa.co</span>
+        </div>
+        <div className="hero-browser-body">
+          <div className="hero-browser-lines">
+            <span className="hero-browser-line hero-browser-line-primary" />
+            <span className="hero-browser-line hero-browser-line-secondary" />
+            <span className="hero-browser-line hero-browser-line-tertiary" />
+          </div>
+          <div className="hero-browser-card">
+            <div className="hero-browser-card-mark">
+              <svg className="hero-browser-orbit" viewBox="0 0 120 120" role="presentation">
+                <circle className="hero-browser-ring" cx="60" cy="60" r="42" />
+                <path className="hero-browser-map-line" d="M18 60H102" />
+                <path
+                  className="hero-browser-map-line hero-browser-map-line-soft"
+                  d="M60 18C42 36 42 84 60 102M60 18C78 36 78 84 60 102"
+                />
+                <path
+                  className="hero-browser-map-line hero-browser-map-line-soft"
+                  d="M25 40C47 50 73 50 95 40M25 80C47 70 73 70 95 80"
+                />
+                <path
+                  className="hero-browser-route hero-browser-route-shadow"
+                  d="M26 88C39 63 49 76 60 58C71 40 86 50 100 30"
+                />
+                <path className="hero-browser-route" d="M26 88C39 63 49 76 60 58C71 40 86 50 100 30" />
+                <circle className="hero-browser-node" cx="26" cy="88" r="3.5" />
+                <circle className="hero-browser-node hero-browser-node-mid" cx="60" cy="58" r="3" />
+                <circle className="hero-browser-node" cx="100" cy="30" r="3.5" />
+              </svg>
+            </div>
+            <div className="hero-browser-card-copy">
+              <span className="hero-browser-copy-line hero-browser-copy-line-long" />
+              <span className="hero-browser-copy-line" />
+              <span className="hero-browser-copy-line hero-browser-copy-line-short" />
+            </div>
+          </div>
+          <div className="hero-browser-chips">
+            <span>Technology</span>
+            <span>Privacy</span>
+            <span>AI</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
