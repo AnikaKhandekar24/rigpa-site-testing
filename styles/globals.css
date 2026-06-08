@@ -16,7 +16,8 @@
   --serif-text: var(--font-text), "Source Serif 4", Georgia, serif;
   --measure: 64ch;
   --gutter: clamp(1.5rem, 5vw, 4rem);
-  --section-gap: clamp(5rem, 10vw, 9rem);
+  --nav-gutter: clamp(1.5rem, 4vw, 3.75rem);
+  --section-gap: clamp(4rem, 8vw, 7rem);
 }
 
 * {
@@ -145,6 +146,12 @@ nav.top {
   box-shadow: 0 1px 0 color-mix(in srgb, var(--paper) 80%, transparent);
 }
 
+nav.top .wrap {
+  max-width: none;
+  padding-right: var(--nav-gutter);
+  padding-left: var(--nav-gutter);
+}
+
 .nav-row {
   display: flex;
   align-items: center;
@@ -160,7 +167,7 @@ nav.top {
 }
 
 .nav-row > .brand-link {
-  transform: translateX(-0.18rem);
+  transform: none;
 }
 
 .logo {
@@ -242,8 +249,8 @@ nav.top li {
 }
 
 .hero {
-  padding-top: clamp(4rem, 9vw, 8rem);
-  padding-bottom: clamp(4rem, 8vw, 7rem);
+  padding-top: clamp(2.75rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5.75rem);
 }
 
 .eyebrow {
