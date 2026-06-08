@@ -1,7 +1,7 @@
 export function HeroLogo() {
   return (
     <div className="hero-logo" aria-hidden="true">
-      <svg className="hero-logo-mark" viewBox="0 0 260 260" role="presentation">
+      <svg className="hero-logo-mark" viewBox="20 20 220 220" role="presentation">
         <circle className="hero-logo-ring" cx="130" cy="130" r="83" />
         <path className="hero-logo-line" d="M47 130H213" />
         <path
