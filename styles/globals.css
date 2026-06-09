@@ -184,49 +184,6 @@ nav.top .wrap {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.42rem;
-}
-
-.logo-mark {
-  width: 1.25rem;
-  height: 1.25rem;
-  flex: 0 0 auto;
-  overflow: visible;
-}
-
-.logo-compact .logo-mark {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.logo-ring,
-.logo-line,
-.logo-route {
-  fill: none;
-  vector-effect: non-scaling-stroke;
-}
-
-.logo-ring {
-  stroke: var(--ink);
-  stroke-width: 2;
-}
-
-.logo-line-soft {
-  stroke: var(--rule);
-  stroke-width: 1.2;
-}
-
-.logo-route {
-  stroke: var(--oxblood);
-  stroke-linecap: round;
-  stroke-width: 2.2;
-}
-
-.logo-node {
-  fill: var(--oxblood);
-  stroke: var(--paper);
-  stroke-width: 2.5;
-  vector-effect: non-scaling-stroke;
 }
 
 .logo-wordmark {
@@ -251,8 +208,8 @@ nav.top .wrap {
   transform: translateY(-0.03rem);
 }
 
-.brand-link:hover .logo-ring {
-  stroke: var(--oxblood);
+.brand-link:hover .logo-word {
+  color: var(--oxblood);
 }
 
 nav.top ul {

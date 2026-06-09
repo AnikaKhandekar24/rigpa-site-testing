@@ -9,7 +9,7 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <a href="#top" className="brand-link" aria-label="Rigpa, back to top">
-            <Logo compact />
+            <Logo />
           </a>
 
           <div className="footer-content">
